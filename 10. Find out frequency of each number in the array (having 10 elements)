@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main() {
+    int arr[10], visited[10] = {0};
+    int i, j, count;
+
+    printf("Enter 10 elements:\n");
+    for (i = 0; i < 10; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    printf("Frequency of each element:\n");
+    for (i = 0; i < 10; i++) {
+        if (visited[i] == 1)
+            continue;
+        count = 1;
+        for (j = i + 1; j < 10; j++) {
+            if (arr[i] == arr[j]) {
+                visited[j] = 1;
+                count++;
+            }
+        }
+        printf("%d occurs %d times\n", arr[i], count);
+    }
+    return 0;
+}
