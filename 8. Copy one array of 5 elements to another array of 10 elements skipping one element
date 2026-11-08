@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main() {
+    int src[5], dest[10] = {0};
+    int i, j = 0;
+
+    printf("Enter 5 elements for source array:\n");
+    for (i = 0; i < 5; i++) {
+        scanf("%d", &src[i]);
+    }
+
+    for (i = 0; i < 5; i++) {
+        if (i == 2) continue; // Skipping the element at index 2 as an example
+        dest[j] = src[i];
+        j++;
+    }
+
+    printf("Destination array (10 elements): ");
+    for (i = 0; i < 10; i++) {
+        printf("%d ", dest[i]);
+    }
+    printf("\n");
+    return 0;
+}
